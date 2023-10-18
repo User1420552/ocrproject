@@ -21,11 +21,9 @@ def assistant():
         run = request.form.get('run')
         if run == 'submit':
             uploaded_file = request.files['filename']
-
             if uploaded_file:
                 chatgpt_response = extract_text_from_image(uploaded_file)
                 return render_template('assistant_page.html', chatgpt_response=chatgpt_response)
-
     return render_template('assistant_page.html', chatgpt_response=chatgpt_response)
 
 
